@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 using namespace std;
-const int SIZE = 25; //100 total cells
+const int SIZE = 41; //100 total cells
 
 class Cell
 {
@@ -37,7 +38,18 @@ int main()
 {
     Cell grid[SIZE][SIZE];
     fill(grid);
-    draw(grid);
+    string in = " ";
+
+    do
+    {
+        cin >> in;
+        grid[7][7].sym = " " + in + " ";
+
+        draw(grid);
+        system("cls");
+
+
+    }while(in != "q");
 
     return 0;
 }
